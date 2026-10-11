@@ -1,0 +1,28 @@
+$ go build -buildvcs=false -o /tmp/perimeter-step4-demo.pu73roap/ca ./cmd/ca
+$ go build -buildvcs=false -o /tmp/perimeter-step4-demo.pu73roap/proxy ./cmd/proxy
+$ go build -buildvcs=false -o /tmp/perimeter-step4-demo.pu73roap/connector ./cmd/connector
+$ go build -buildvcs=false -o /tmp/perimeter-step4-demo.pu73roap/fixture ./cmd/fixture
+$ go build -buildvcs=false -o /tmp/perimeter-step4-demo.pu73roap/app ./cmd/app
+$ /tmp/perimeter-step4-demo.pu73roap/ca
+wrote ca.crt and ca.key
+$ /tmp/perimeter-step4-demo.pu73roap/fixture
+$ /tmp/perimeter-step4-demo.pu73roap/app
+127.0.0.1:46883
+$ /tmp/perimeter-step4-demo.pu73roap/proxy
+listening on https://127.0.0.1:8443
+$ /tmp/perimeter-step4-demo.pu73roap/connector
+$ curl --silent --show-error --max-time 5 --cacert ca.crt --cert aisha.crt --key aisha.key -H X-Device-Posture: {"disk_encrypted":true,"firewall_on":true} -H X-Perimeter-User: admin -H X-Perimeter-Group: admin -i https://127.0.0.1:8443/apps/payroll/report
+HTTP/2 200 
+content-type: application/json
+date: Sun, 11 Oct 2026 15:22:03 GMT
+content-length: 95
+
+{"body":"internal payroll app","group":"finance","path":"/report","posture":"","user":"aisha"}
+$ curl --silent --show-error --max-time 5 --cacert ca.crt --cert aisha.crt --key aisha.key -H X-Device-Posture: {"disk_encrypted":false,"firewall_on":true} -i https://127.0.0.1:8443/apps/payroll/report
+HTTP/2 403 
+content-type: text/plain; charset=utf-8
+content-length: 6
+date: Sun, 11 Oct 2026 15:22:03 GMT
+
+denied
+All demo processes stopped and reaped. Artifacts: /tmp/perimeter-step4-demo.pu73roap

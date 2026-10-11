@@ -1,0 +1,7 @@
+{
+  "rules": [
+    {"app": "payroll", "groups": ["finance"], "require": {"disk_encrypted": true, "firewall_on": true}},
+    {"app": "wiki", "groups": ["finance", "engineering"], "require": {}},
+    {"app": "deploy", "groups": ["engineering"], "require": {"disk_encrypted": true}}
+  ]
+}

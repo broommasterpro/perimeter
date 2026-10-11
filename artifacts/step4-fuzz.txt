@@ -1,0 +1,15 @@
+fuzz: elapsed: 0s, gathering baseline coverage: 0/17 completed
+fuzz: elapsed: 0s, gathering baseline coverage: 17/17 completed, now fuzzing with 2 workers
+fuzz: elapsed: 3s, execs: 384387 (128104/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 6s, execs: 773834 (129838/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 9s, execs: 1183864 (136643/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 12s, execs: 1536544 (117577/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 15s, execs: 1880526 (114665/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 18s, execs: 2213071 (110835/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 21s, execs: 2569789 (118900/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 24s, execs: 2935348 (121858/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 27s, execs: 3307041 (123924/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 30s, execs: 3662431 (118449/sec), new interesting: 0 (total: 17)
+fuzz: elapsed: 30s, execs: 3662431 (0/sec), new interesting: 0 (total: 17)
+PASS
+ok  	perimeter/internal/mux	30.022s

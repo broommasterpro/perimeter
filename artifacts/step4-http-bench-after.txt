@@ -1,0 +1,8 @@
+goos: linux
+goarch: amd64
+pkg: perimeter/internal/proxy
+cpu: AMD Ryzen AI 7 350 w/ Radeon 860M              
+BenchmarkHTTPDirect-16    	   28221	     38448 ns/op	        36.00 p50-us	       142.6 p99-us	    7281 B/op	      85 allocs/op
+BenchmarkHTTPTunnel-16    	    4142	    330865 ns/op	       295.7 p50-us	       914.4 p99-us	   49564 B/op	     347 allocs/op
+PASS
+ok  	perimeter/internal/proxy	2.997s

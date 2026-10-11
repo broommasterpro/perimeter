@@ -1,0 +1,7 @@
+goos: linux
+goarch: amd64
+pkg: perimeter/internal/mux
+cpu: AMD Ryzen AI 7 350 w/ Radeon 860M              
+BenchmarkMux1-16    	     714	   1626776 ns/op	 644.57 MB/s	 2146028 B/op	    1001 allocs/op
+PASS
+ok  	perimeter/internal/mux	1.343s

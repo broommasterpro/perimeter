@@ -1,0 +1,155 @@
+File: perimeter-mux-bench.test
+Build ID: b4c509256d003b2479c4780b86599db560918255
+Type: cpu
+Time: 2026-10-11 19:23:53 IST
+Duration: 1.34s, Total samples = 3.14s (234.84%)
+Showing nodes accounting for 2.68s, 85.35% of 3.14s total
+Dropped 105 nodes (cum <= 0.02s)
+      flat  flat%   sum%        cum   cum%
+     1.70s 54.14% 54.14%      1.70s 54.14%  internal/runtime/syscall/linux.Syscall6
+     0.10s  3.18% 57.32%      0.19s  6.05%  runtime.stealWork
+     0.09s  2.87% 60.19%      0.09s  2.87%  runtime.memmove
+     0.06s  1.91% 62.10%      0.06s  1.91%  runtime.futex
+     0.06s  1.91% 64.01%      0.06s  1.91%  runtime.procyieldAsm
+     0.06s  1.91% 65.92%      0.08s  2.55%  runtime.tryDeferToSpanScan
+     0.05s  1.59% 67.52%      0.05s  1.59%  runtime.madvise
+     0.04s  1.27% 68.79%      0.08s  2.55%  runtime.lock2
+     0.04s  1.27% 70.06%      0.09s  2.87%  runtime.scanblock
+     0.04s  1.27% 71.34%      0.05s  1.59%  runtime.typePointers.next
+     0.03s  0.96% 72.29%      0.19s  6.05%  perimeter/internal/mux.(*Stream).Write
+     0.03s  0.96% 73.25%      0.03s  0.96%  runtime.memclrNoHeapPointers
+     0.02s  0.64% 73.89%      0.02s  0.64%  internal/runtime/atomic.(*Uint32).Add (inline)
+     0.02s  0.64% 74.52%      0.02s  0.64%  runtime.(*mheap).tryAllocMSpan (inline)
+     0.02s  0.64% 75.16%      0.02s  0.64%  runtime.(*randomEnum).next (inline)
+     0.02s  0.64% 75.80%      0.02s  0.64%  runtime.getGCMask (inline)
+     0.02s  0.64% 76.43%      0.02s  0.64%  runtime.gopark
+     0.02s  0.64% 77.07%      0.03s  0.96%  runtime.pidleget
+     0.02s  0.64% 77.71%      0.02s  0.64%  runtime.runqempty (inline)
+     0.02s  0.64% 78.34%      0.04s  1.27%  runtime.runqgrab
+     0.02s  0.64% 78.98%      0.02s  0.64%  runtime.usleep
+     0.01s  0.32% 79.30%      0.04s  1.27%  internal/sync.(*Mutex).Lock (inline)
+     0.01s  0.32% 79.62%      0.54s 17.20%  net.(*netFD).Read
+     0.01s  0.32% 79.94%      0.08s  2.55%  perimeter/internal/mux.(*Session).signal (inline)
+     0.01s  0.32% 80.25%      0.10s  3.18%  runtime.(*mheap).allocSpan
+     0.01s  0.32% 80.57%      0.02s  0.64%  runtime.(*pageAlloc).alloc
+     0.01s  0.32% 80.89%      0.02s  0.64%  runtime.(*spanSet).reset
+     0.01s  0.32% 81.21%      0.06s  1.91%  runtime.(*sweepLocked).sweep
+     0.01s  0.32% 81.53%      0.50s 15.92%  runtime.findRunnable
+     0.01s  0.32% 81.85%      0.03s  0.96%  runtime.makechan
+     0.01s  0.32% 82.17%      0.22s  7.01%  runtime.mallocgc
+     0.01s  0.32% 82.48%      0.03s  0.96%  runtime.newMarkBits
+     0.01s  0.32% 82.80%      0.54s 17.20%  runtime.park_m
+     0.01s  0.32% 83.12%      0.02s  0.64%  runtime.pcvalue
+     0.01s  0.32% 83.44%      0.05s  1.59%  runtime.runqsteal
+     0.01s  0.32% 83.76%      0.09s  2.87%  runtime.scanObject
+     0.01s  0.32% 84.08%      0.06s  1.91%  runtime.scanSpan
+     0.01s  0.32% 84.39%      0.04s  1.27%  runtime.scanstack
+     0.01s  0.32% 84.71%      0.06s  1.91%  runtime.selectgo
+     0.01s  0.32% 85.03%      0.03s  0.96%  runtime.sellock
+     0.01s  0.32% 85.35%      1.56s 49.68%  syscall.RawSyscall6
+         0     0% 85.35%      0.04s  1.27%  bytes.(*Buffer).Read (inline)
+         0     0% 85.35%      0.53s 16.88%  internal/poll.(*FD).Read
+         0     0% 85.35%      1.06s 33.76%  internal/poll.(*FD).Write
+         0     0% 85.35%      1.57s 50.00%  internal/poll.ignoringEINTRIO (inline)
+         0     0% 85.35%      0.15s  4.78%  internal/runtime/syscall/linux.EpollWait
+         0     0% 85.35%      0.03s  0.96%  internal/sync.(*Mutex).lockSlow
+         0     0% 85.35%      0.07s  2.23%  io.Copy (inline)
+         0     0% 85.35%      0.54s 17.20%  io.ReadAtLeast
+         0     0% 85.35%      0.54s 17.20%  io.ReadFull (inline)
+         0     0% 85.35%      0.07s  2.23%  io.copyBuffer
+         0     0% 85.35%      0.07s  2.23%  io.discard.ReadFrom
+         0     0% 85.35%      0.54s 17.20%  net.(*conn).Read
+         0     0% 85.35%      1.06s 33.76%  net.(*conn).Write
+         0     0% 85.35%      1.06s 33.76%  net.(*netFD).Write
+         0     0% 85.35%      0.02s  0.64%  perimeter/internal/mux.(*Session).enqueue
+         0     0% 85.35%      0.72s 22.93%  perimeter/internal/mux.(*Session).readLoop
+         0     0% 85.35%      0.07s  2.23%  perimeter/internal/mux.(*Session).receive
+         0     0% 85.35%      1.15s 36.62%  perimeter/internal/mux.(*Session).writeLoop
+         0     0% 85.35%      0.07s  2.23%  perimeter/internal/mux.(*Stream).Read
+         0     0% 85.35%      0.02s  0.64%  perimeter/internal/mux.BenchmarkMux1
+         0     0% 85.35%      0.64s 20.38%  perimeter/internal/mux.ReadFrame
+         0     0% 85.35%      1.06s 33.76%  perimeter/internal/mux.WriteFrame
+         0     0% 85.35%      0.02s  0.64%  perimeter/internal/mux.benchmarkTransfer
+         0     0% 85.35%      0.07s  2.23%  perimeter/internal/mux.benchmarkTransfer.func2
+         0     0% 85.35%      0.19s  6.05%  perimeter/internal/mux.benchmarkTransfer.func4
+         0     0% 85.35%      0.02s  0.64%  perimeter/internal/mux.wait
+         0     0% 85.35%      1.25s 39.81%  perimeter/internal/mux.writeAll
+         0     0% 85.35%      0.02s  0.64%  runtime.(*consistentHeapStats).acquire
+         0     0% 85.35%      0.12s  3.82%  runtime.(*mcache).nextFree
+         0     0% 85.35%      0.03s  0.96%  runtime.(*mcache).prepareForSweep
+         0     0% 85.35%      0.12s  3.82%  runtime.(*mcache).refill
+         0     0% 85.35%      0.02s  0.64%  runtime.(*mcache).releaseAll
+         0     0% 85.35%      0.11s  3.50%  runtime.(*mcentral).cacheSpan
+         0     0% 85.35%      0.10s  3.18%  runtime.(*mcentral).grow
+         0     0% 85.35%      0.02s  0.64%  runtime.(*mcentral).uncacheSpan
+         0     0% 85.35%      0.10s  3.18%  runtime.(*mheap).alloc
+         0     0% 85.35%      0.10s  3.18%  runtime.(*mheap).alloc.func1
+         0     0% 85.35%      0.02s  0.64%  runtime.(*mheap).freeSpan (inline)
+         0     0% 85.35%      0.02s  0.64%  runtime.(*mheap).freeSpanLocked
+         0     0% 85.35%      0.03s  0.96%  runtime.(*mheap).initSpan
+         0     0% 85.35%      0.05s  1.59%  runtime.(*pageAlloc).scavenge
+         0     0% 85.35%      0.05s  1.59%  runtime.(*pageAlloc).scavenge.func1
+         0     0% 85.35%      0.05s  1.59%  runtime.(*pageAlloc).scavengeOne
+         0     0% 85.35%      0.05s  1.59%  runtime.(*scavengerState).init.func2
+         0     0% 85.35%      0.05s  1.59%  runtime.(*scavengerState).run
+         0     0% 85.35%      0.02s  0.64%  runtime.(*stkframe).getStackMap
+         0     0% 85.35%      0.02s  0.64%  runtime.(*sweepLocked).sweep.(*mheap).freeSpan.func2
+         0     0% 85.35%      0.05s  1.59%  runtime.bgscavenge
+         0     0% 85.35%      0.03s  0.96%  runtime.bgsweep
+         0     0% 85.35%      0.02s  0.64%  runtime.checkRunqsNoP
+         0     0% 85.35%      0.04s  1.27%  runtime.closechan
+         0     0% 85.35%      0.02s  0.64%  runtime.closechan.goready.func1
+         0     0% 85.35%      0.02s  0.64%  runtime.deductAssistCredit
+         0     0% 85.35%      0.02s  0.64%  runtime.findObject
+         0     0% 85.35%      0.02s  0.64%  runtime.finishsweep_m
+         0     0% 85.35%      0.06s  1.91%  runtime.forEachP (inline)
+         0     0% 85.35%      0.06s  1.91%  runtime.forEachPInternal
+         0     0% 85.35%      0.06s  1.91%  runtime.futexsleep
+         0     0% 85.35%      0.02s  0.64%  runtime.gcAssistAlloc
+         0     0% 85.35%      0.02s  0.64%  runtime.gcAssistAlloc.func2
+         0     0% 85.35%      0.02s  0.64%  runtime.gcAssistAlloc1
+         0     0% 85.35%      0.35s 11.15%  runtime.gcBgMarkWorker
+         0     0% 85.35%      0.28s  8.92%  runtime.gcBgMarkWorker.func2
+         0     0% 85.35%      0.28s  8.92%  runtime.gcDrain
+         0     0% 85.35%      0.27s  8.60%  runtime.gcDrainMarkWorkerDedicated (inline)
+         0     0% 85.35%      0.02s  0.64%  runtime.gcDrainN
+         0     0% 85.35%      0.07s  2.23%  runtime.gcMarkDone
+         0     0% 85.35%      0.02s  0.64%  runtime.gcMarkDone.forEachP.func5
+         0     0% 85.35%      0.05s  1.59%  runtime.gcMarkTermination
+         0     0% 85.35%      0.04s  1.27%  runtime.gcMarkTermination.forEachP.func7
+         0     0% 85.35%      0.04s  1.27%  runtime.gcMarkTermination.func4
+         0     0% 85.35%      0.02s  0.64%  runtime.gcStart
+         0     0% 85.35%      0.02s  0.64%  runtime.gcStart.func3
+         0     0% 85.35%      0.02s  0.64%  runtime.goready (inline)
+         0     0% 85.35%      0.10s  3.18%  runtime.growslice
+         0     0% 85.35%      0.08s  2.55%  runtime.lock (inline)
+         0     0% 85.35%      0.08s  2.55%  runtime.lockWithRank (inline)
+         0     0% 85.35%      0.06s  1.91%  runtime.mPark (inline)
+         0     0% 85.35%      0.10s  3.18%  runtime.makeslice
+         0     0% 85.35%      0.18s  5.73%  runtime.mallocgcSmallNoscan
+         0     0% 85.35%      0.13s  4.14%  runtime.markroot
+         0     0% 85.35%      0.05s  1.59%  runtime.markroot.func1
+         0     0% 85.35%      0.08s  2.55%  runtime.markrootBlock
+         0     0% 85.35%      0.55s 17.52%  runtime.mcall
+         0     0% 85.35%      0.16s  5.10%  runtime.netpoll
+         0     0% 85.35%      0.02s  0.64%  runtime.newstack
+         0     0% 85.35%      0.06s  1.91%  runtime.notesleep
+         0     0% 85.35%      0.02s  0.64%  runtime.pcdatavalue
+         0     0% 85.35%      0.06s  1.91%  runtime.procyield (inline)
+         0     0% 85.35%      0.02s  0.64%  runtime.ready
+         0     0% 85.35%      0.02s  0.64%  runtime.scanframeworker
+         0     0% 85.35%      0.51s 16.24%  runtime.schedule
+         0     0% 85.35%      0.02s  0.64%  runtime.stackcache_clear
+         0     0% 85.35%      0.07s  2.23%  runtime.stopm
+         0     0% 85.35%      0.03s  0.96%  runtime.sweepone
+         0     0% 85.35%      0.05s  1.59%  runtime.sysUnused (inline)
+         0     0% 85.35%      0.05s  1.59%  runtime.sysUnusedOS
+         0     0% 85.35%      0.59s 18.79%  runtime.systemstack
+         0     0% 85.35%      0.04s  1.27%  sync.(*Mutex).Lock (inline)
+         0     0% 85.35%      0.53s 16.88%  syscall.Read (inline)
+         0     0% 85.35%      1.57s 50.00%  syscall.Syscall
+         0     0% 85.35%      1.04s 33.12%  syscall.Write (inline)
+         0     0% 85.35%      0.53s 16.88%  syscall.read
+         0     0% 85.35%      1.04s 33.12%  syscall.write
+         0     0% 85.35%      0.02s  0.64%  testing.(*B).launch
+         0     0% 85.35%      0.02s  0.64%  testing.(*B).runN

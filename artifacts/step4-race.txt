@@ -1,0 +1,252 @@
+?   	perimeter/cmd/ca	[no test files]
+?   	perimeter/cmd/connector	[no test files]
+?   	perimeter/cmd/proxy	[no test files]
+=== RUN   TestValidity
+=== RUN   TestValidity/minute5
+=== RUN   TestValidity/minute11
+=== RUN   TestValidity/beforeIssue
+--- PASS: TestValidity (0.00s)
+    --- PASS: TestValidity/minute5 (0.00s)
+    --- PASS: TestValidity/minute11 (0.00s)
+    --- PASS: TestValidity/beforeIssue (0.00s)
+=== RUN   TestTamper
+    ca_test.go:111: parse succeeded; direct signature check: x509: ECDSA verification failure
+    ca_test.go:118: Verify: x509: certificate signed by unknown authority (possibly because of "x509: ECDSA verification failure" while trying to verify candidate authority certificate "perimeter-root")
+--- PASS: TestTamper (0.00s)
+=== RUN   TestForeignCA
+--- PASS: TestForeignCA (0.00s)
+=== RUN   TestSaveLoad
+--- PASS: TestSaveLoad (0.00s)
+=== RUN   TestDefaultAndInputs
+--- PASS: TestDefaultAndInputs (0.00s)
+=== RUN   TestClientUsage
+=== RUN   TestClientUsage/server
+=== RUN   TestClientUsage/missing
+=== RUN   TestClientUsage/unrestricted
+=== RUN   TestClientUsage/mixed
+--- PASS: TestClientUsage (0.00s)
+    --- PASS: TestClientUsage/server (0.00s)
+    --- PASS: TestClientUsage/missing (0.00s)
+    --- PASS: TestClientUsage/unrestricted (0.00s)
+    --- PASS: TestClientUsage/mixed (0.00s)
+=== RUN   TestIssueServer
+--- PASS: TestIssueServer (0.00s)
+=== RUN   TestIssueConnector
+--- PASS: TestIssueConnector (0.00s)
+PASS
+ok  	perimeter/internal/ca	1.030s
+=== RUN   TestEchoHalfClose
+--- PASS: TestEchoHalfClose (0.00s)
+=== RUN   TestConcurrent1000
+--- PASS: TestConcurrent1000 (7.79s)
+=== RUN   TestFlowControl
+    mux_test.go:171: stalled reader: Write accepted exactly 65536 bytes, then i/o timeout
+    mux_test.go:192: stalled stream buffered=65536 capacity=65536; stream B completed
+--- PASS: TestFlowControl (0.10s)
+=== RUN   TestTransfer100MB
+    mux_test.go:255: bytes=100000000 baseline_heap=1637872 sampled_peak_heap=4115608
+--- PASS: TestTransfer100MB (0.98s)
+=== RUN   TestDeadlinesAndClose
+--- PASS: TestDeadlinesAndClose (0.12s)
+=== RUN   TestProtocolViolations
+=== RUN   TestProtocolViolations/oversized
+=== RUN   TestProtocolViolations/wrong_opener
+=== RUN   TestProtocolViolations/unknown_ID
+=== RUN   TestProtocolViolations/excess_credit
+--- PASS: TestProtocolViolations (0.00s)
+    --- PASS: TestProtocolViolations/oversized (0.00s)
+    --- PASS: TestProtocolViolations/wrong_opener (0.00s)
+    --- PASS: TestProtocolViolations/unknown_ID (0.00s)
+    --- PASS: TestProtocolViolations/excess_credit (0.00s)
+=== RUN   TestKeepalive
+    mux_test.go:377: mux keepalive timeout
+--- PASS: TestKeepalive (0.06s)
+=== RUN   TestWireExamples
+    mux_test.go:391: type=1 header=010000000100000007 payload=706179726f6c6c
+    mux_test.go:391: type=2 header=020000000100000064 payload=41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141
+    mux_test.go:391: type=5 header=050000000100000004 payload=00004000
+    mux_test.go:391: type=3 header=030000000100000000 payload=
+    mux_test.go:402: sent=16384 credit=49152 remaining=183616
+    mux_test.go:402: sent=16384 credit=32768 remaining=167232
+    mux_test.go:402: sent=16384 credit=16384 remaining=150848
+    mux_test.go:402: sent=16384 credit=0 remaining=134464
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=118080
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=101696
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=85312
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=68928
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=52544
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=36160
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=19776
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=16384 credit=0 remaining=3392
+    mux_test.go:396: BLOCKED: no credit; application reads 16384
+    mux_test.go:402: sent=3392 credit=12992 remaining=0
+--- PASS: TestWireExamples (0.00s)
+=== RUN   TestStreamLimit
+--- PASS: TestStreamLimit (0.00s)
+=== RUN   TestIdleStreamMemory
+    mux_test.go:428: 1000 logical streams, both endpoints: heap_delta=662512 bytes, bytes_per_logical_stream=662.5
+--- PASS: TestIdleStreamMemory (0.03s)
+=== RUN   FuzzFrameDecoder
+=== RUN   FuzzFrameDecoder/seed#0
+=== RUN   FuzzFrameDecoder/seed#1
+--- PASS: FuzzFrameDecoder (0.00s)
+    --- PASS: FuzzFrameDecoder/seed#0 (0.00s)
+    --- PASS: FuzzFrameDecoder/seed#1 (0.00s)
+PASS
+ok  	perimeter/internal/mux	10.163s
+=== RUN   TestEvaluate
+=== RUN   TestEvaluate/finance_payroll
+=== RUN   TestEvaluate/missing_disk
+=== RUN   TestEvaluate/missing_firewall
+=== RUN   TestEvaluate/wrong_group
+=== RUN   TestEvaluate/deploy
+=== RUN   TestEvaluate/deploy_no_disk
+=== RUN   TestEvaluate/unknown
+=== RUN   TestEvaluate/absent_posture
+=== RUN   TestEvaluate/wiki_absent_posture
+=== RUN   TestEvaluate/case_sensitive
+--- PASS: TestEvaluate (0.00s)
+    --- PASS: TestEvaluate/finance_payroll (0.00s)
+    --- PASS: TestEvaluate/missing_disk (0.00s)
+    --- PASS: TestEvaluate/missing_firewall (0.00s)
+    --- PASS: TestEvaluate/wrong_group (0.00s)
+    --- PASS: TestEvaluate/deploy (0.00s)
+    --- PASS: TestEvaluate/deploy_no_disk (0.00s)
+    --- PASS: TestEvaluate/unknown (0.00s)
+    --- PASS: TestEvaluate/absent_posture (0.00s)
+    --- PASS: TestEvaluate/wiki_absent_posture (0.00s)
+    --- PASS: TestEvaluate/case_sensitive (0.00s)
+=== RUN   TestParseRejects
+=== RUN   TestParseRejects/unknown_posture
+=== RUN   TestParseRejects/malformed
+=== RUN   TestParseRejects/trailing_JSON
+=== RUN   TestParseRejects/unknown_field
+=== RUN   TestParseRejects/empty_app
+=== RUN   TestParseRejects/duplicate
+=== RUN   TestParseRejects/unknown_rule_field
+=== RUN   TestParseRejects/empty_groups
+=== RUN   TestParseRejects/empty_group
+--- PASS: TestParseRejects (0.00s)
+    --- PASS: TestParseRejects/unknown_posture (0.00s)
+    --- PASS: TestParseRejects/malformed (0.00s)
+    --- PASS: TestParseRejects/trailing_JSON (0.00s)
+    --- PASS: TestParseRejects/unknown_field (0.00s)
+    --- PASS: TestParseRejects/empty_app (0.00s)
+    --- PASS: TestParseRejects/duplicate (0.00s)
+    --- PASS: TestParseRejects/unknown_rule_field (0.00s)
+    --- PASS: TestParseRejects/empty_groups (0.00s)
+    --- PASS: TestParseRejects/empty_group (0.00s)
+=== RUN   TestAnyRuleAndOrder
+--- PASS: TestAnyRuleAndOrder (0.00s)
+=== RUN   TestReload
+--- PASS: TestReload (0.00s)
+=== RUN   TestConcurrentReload
+--- PASS: TestConcurrentReload (0.01s)
+=== RUN   TestDecisionTable
+    policy_test.go:182: aisha: payroll=allowed; wiki=allowed; deploy=group not allowed; hr2=unknown app
+    policy_test.go:182: bob: payroll=group not allowed; wiki=allowed; deploy=allowed; hr2=unknown app
+    policy_test.go:182: carol: payroll=missing posture: disk_encrypted; wiki=allowed; deploy=group not allowed; hr2=unknown app
+--- PASS: TestDecisionTable (0.00s)
+PASS
+ok  	perimeter/internal/policy	1.022s
+=== RUN   TestForwarding
+    forward_test.go:183: real response="real app: /report user=aisha group=finance posture="; denied requests added OPENs=0 app_requests=0; same user connection reused
+--- PASS: TestForwarding (0.02s)
+=== RUN   TestCancellationClosesBackend
+    forward_test.go:211: user cancellation closed internal TCP connection
+--- PASS: TestCancellationClosesBackend (0.02s)
+=== RUN   TestConnectorFailureThroughProxy
+=== RUN   TestConnectorFailureThroughProxy/active_requests
+2026/10/11 19:30:06 httputil: ReverseProxy read error during body copy: use of closed network connection
+    forward_test.go:239: user response failed promptly: unexpected EOF
+=== NAME  TestConnectorFailureThroughProxy
+    forward_test.go:261: goroutines returned to baseline=2
+--- PASS: TestConnectorFailureThroughProxy (0.03s)
+    --- PASS: TestConnectorFailureThroughProxy/active_requests (0.03s)
+=== RUN   TestPolicyRequests
+=== RUN   TestPolicyRequests/allow
+=== RUN   TestPolicyRequests/bad_posture
+=== RUN   TestPolicyRequests/unknown_app
+=== RUN   TestPolicyRequests/outside_path
+=== RUN   TestPolicyRequests/empty_app
+=== RUN   TestPolicyRequests/extra_path
+=== RUN   TestPolicyRequests/missing_posture
+=== RUN   TestPolicyRequests/malformed_posture
+=== RUN   TestPolicyRequests/wiki_no_posture
+--- PASS: TestPolicyRequests (0.01s)
+    --- PASS: TestPolicyRequests/allow (0.01s)
+    --- PASS: TestPolicyRequests/bad_posture (0.00s)
+    --- PASS: TestPolicyRequests/unknown_app (0.00s)
+    --- PASS: TestPolicyRequests/outside_path (0.00s)
+    --- PASS: TestPolicyRequests/empty_app (0.00s)
+    --- PASS: TestPolicyRequests/extra_path (0.00s)
+    --- PASS: TestPolicyRequests/missing_posture (0.00s)
+    --- PASS: TestPolicyRequests/malformed_posture (0.00s)
+    --- PASS: TestPolicyRequests/wiki_no_posture (0.00s)
+=== RUN   TestConnectionReuseAndReload
+    policy_test.go:155: posture changed: first=200 second=403 reused=true same_connection=true
+    policy_test.go:171: policy revoked: status=403 reused=true same_connection=true
+--- PASS: TestConnectionReuseAndReload (0.01s)
+=== RUN   TestConnectorRejectedByUserListener
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:46834: user certificate required
+    policy_test.go:204: Get "https://127.0.0.1:45815/apps/wiki": remote error: tls: bad certificate
+--- PASS: TestConnectorRejectedByUserListener (0.01s)
+=== RUN   TestMTLS
+    proxy_test.go:94: verification time=2026-10-11T15:00:06Z; expired NotAfter=2026-10-11T14:59:06Z
+=== RUN   TestMTLS/valid
+    proxy_test.go:145: dial succeeded; now sending an HTTP request
+2026/10/11 19:30:06 INFO access decision user=aisha group=finance app=wiki allow=true reason=allowed
+    proxy_test.go:192: status=200 body="allowed: aisha -> wiki"
+=== RUN   TestMTLS/no_card
+    proxy_test.go:145: dial succeeded; now sending an HTTP request
+    proxy_test.go:179: first response read rejected: remote error: tls: certificate required
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:53238: tls: client didn't provide a certificate
+=== RUN   TestMTLS/expired
+    proxy_test.go:145: dial succeeded; now sending an HTTP request
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:53244: tls: failed to verify certificate: x509: certificate has expired or is not yet valid: current time 2026-10-11T15:00:06Z is after 2026-10-11T14:59:06Z
+    proxy_test.go:179: first response read rejected: remote error: tls: expired certificate
+=== RUN   TestMTLS/foreign_CA
+    proxy_test.go:145: dial succeeded; now sending an HTTP request
+    proxy_test.go:179: first response read rejected: remote error: tls: unknown certificate authority
+=== RUN   TestMTLS/fake_proxy
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:53250: tls: failed to verify certificate: x509: certificate signed by unknown authority (possibly because of "x509: ECDSA verification failure" while trying to verify candidate authority certificate "perimeter-root")
+    proxy_test.go:136: dial rejected: tls: failed to verify certificate: x509: certificate signed by unknown authority (possibly because of "x509: ECDSA verification failure" while trying to verify candidate authority certificate "perimeter-root")
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:45194: remote error: tls: bad certificate
+=== RUN   TestMTLS/wrong_usage
+    proxy_test.go:145: dial succeeded; now sending an HTTP request
+2026/10/11 19:30:06 http: TLS handshake error from 127.0.0.1:53256: tls: failed to verify certificate: x509: certificate specifies an incompatible key usage
+    proxy_test.go:179: first response read rejected: remote error: tls: bad certificate
+--- PASS: TestMTLS (0.02s)
+    --- PASS: TestMTLS/valid (0.00s)
+    --- PASS: TestMTLS/no_card (0.00s)
+    --- PASS: TestMTLS/expired (0.00s)
+    --- PASS: TestMTLS/foreign_CA (0.00s)
+    --- PASS: TestMTLS/fake_proxy (0.00s)
+    --- PASS: TestMTLS/wrong_usage (0.00s)
+PASS
+ok  	perimeter/internal/proxy	1.136s
+=== RUN   TestRegistry
+--- PASS: TestRegistry (0.00s)
+=== RUN   TestRegistryAndLocalAllowlist
+--- PASS: TestRegistryAndLocalAllowlist (0.01s)
+=== RUN   TestReconnectRevokeExpiry
+    tunnel_test.go:217: expiry forced fresh connection; connections=2
+--- PASS: TestReconnectRevokeExpiry (1.56s)
+=== RUN   TestReplacementAndRole
+    tunnel_test.go:283: user with group connector rejected
+--- PASS: TestReplacementAndRole (0.04s)
+=== RUN   TestConnectorHasNoListener
+--- PASS: TestConnectorHasNoListener (0.00s)
+=== RUN   TestFailureIsolation
+    tunnel_test.go:357: mid-response failure: use of closed network connection; unrelated connector still serves
+--- PASS: TestFailureIsolation (0.03s)
+PASS
+ok  	perimeter/internal/tunnel	2.649s

@@ -1,0 +1,19 @@
+=== RUN   TestIdleStreamMemory
+    mux_test.go:428: 1000 logical streams, both endpoints: heap_delta=621824 bytes, bytes_per_logical_stream=621.8
+--- PASS: TestIdleStreamMemory (0.01s)
+goos: linux
+goarch: amd64
+pkg: perimeter/internal/mux
+cpu: AMD Ryzen AI 7 350 w/ Radeon 860M              
+BenchmarkMux1
+BenchmarkMux1-16     	     234	   1476059 ns/op	 710.39 MB/s	 2147212 B/op	     993 allocs/op
+BenchmarkMux32
+BenchmarkMux32-16    	       7	  43627510 ns/op	 769.11 MB/s	69060856 B/op	   29467 allocs/op
+BenchmarkTCP1
+BenchmarkTCP1-16     	    2370	    143335 ns/op	7315.54 MB/s	     100 B/op	       3 allocs/op
+BenchmarkTCP32
+BenchmarkTCP32-16    	     358	    966547 ns/op	34715.76 MB/s	    2606 B/op	      65 allocs/op
+BenchmarkOpen
+BenchmarkOpen-16     	   46560	      7141 ns/op	    1749 B/op	      24 allocs/op
+PASS
+ok  	perimeter/internal/mux	2.350s

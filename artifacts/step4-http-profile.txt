@@ -1,0 +1,88 @@
+File: perimeter-proxy-bench.test
+Build ID: 6015daf15016f501d8f72164e7d5013bb57cee2c
+Type: alloc_space
+Time: 2026-10-11 18:36:39 IST
+Showing nodes accounting for 498.04MB, 92.74% of 537.06MB total
+Dropped 135 nodes (cum <= 2.69MB)
+      flat  flat%   sum%        cum   cum%
+  238.81MB 44.47% 44.47%   250.38MB 46.62%  io.copyBuffer
+  130.49MB 24.30% 68.76%   130.49MB 24.30%  net/http/httputil.(*ReverseProxy).copyBuffer
+   23.09MB  4.30% 73.06%    23.09MB  4.30%  bufio.NewReaderSize (inline)
+   15.05MB  2.80% 75.87%    15.05MB  2.80%  bufio.NewWriterSize (inline)
+   11.50MB  2.14% 78.01%       12MB  2.23%  net/textproto.readMIMEHeader
+    9.50MB  1.77% 79.78%     9.50MB  1.77%  perimeter/internal/mux.(*Session).signal (inline)
+    9.07MB  1.69% 81.47%     9.07MB  1.69%  io.init.func1
+    9.02MB  1.68% 83.15%     9.02MB  1.68%  sync.(*Pool).pinSlow
+    7.50MB  1.40% 84.54%     7.50MB  1.40%  net/http.Header.Clone (inline)
+       4MB  0.74% 85.29%   155.50MB 28.95%  perimeter/internal/proxy.forward
+    3.50MB  0.65% 85.94%     3.50MB  0.65%  perimeter/internal/mux.ReadFrame
+       3MB  0.56% 86.50%        3MB  0.56%  net/textproto.MIMEHeader.Set (inline)
+       3MB  0.56% 87.06%    18.01MB  3.35%  net/http.(*conn).readRequest
+       3MB  0.56% 87.61%    31.60MB  5.88%  net/http.(*Transport).dialConn
+       3MB  0.56% 88.17%     3.50MB  0.65%  context.WithDeadlineCause
+    2.50MB  0.47% 88.64%     3.50MB  0.65%  net/http.NewRequestWithContext
+    2.50MB  0.47% 89.10%        3MB  0.56%  crypto/tls.(*halfConn).encrypt
+    2.50MB  0.47% 89.57%        3MB  0.56%  net/http.(*Transport).getConn
+       2MB  0.37% 89.94%        3MB  0.56%  context.(*cancelCtx).propagateCancel
+       2MB  0.37% 90.32%        6MB  1.12%  net/http.(*persistConn).roundTrip
+       2MB  0.37% 90.69%   151.50MB 28.21%  net/http/httputil.(*ReverseProxy).ServeHTTP
+       2MB  0.37% 91.06%        5MB  0.93%  context.withCancel (inline)
+    1.50MB  0.28% 91.34%    10.01MB  1.86%  net/http.readRequest
+    1.50MB  0.28% 91.62%    11.50MB  2.14%  net/http.(*persistConn).readLoop
+    1.50MB  0.28% 91.90%     3.50MB  0.65%  net/http.(*Request).write
+    0.50MB 0.093% 91.99%       14MB  2.61%  net/http.(*Transport).roundTrip
+    0.50MB 0.093% 92.08%   198.56MB 36.97%  net/http.(*conn).serve
+    0.50MB 0.093% 92.18%   120.01MB 22.35%  perimeter/internal/tunnel.(*Connector).relay
+    0.50MB 0.093% 92.27%     8.50MB  1.58%  net/http.send
+    0.50MB 0.093% 92.36%        3MB  0.56%  net/http.setRequestCancel
+    0.50MB 0.093% 92.46%     3.50MB  0.65%  perimeter/internal/mux.(*Session).enqueue
+    0.50MB 0.093% 92.55%        3MB  0.56%  perimeter/internal/mux.WriteFrame
+    0.50MB 0.093% 92.64%     4.50MB  0.84%  perimeter/internal/proxy.HeaderPosture.Posture
+    0.50MB 0.093% 92.74%   163.50MB 30.44%  perimeter/internal/proxy.fullProxy.Handler.func7
+         0     0% 92.74%     4.02MB  0.75%  bufio.NewReader (inline)
+         0     0% 92.74%     3.50MB  0.65%  context.WithDeadline (inline)
+         0     0% 92.74%     3.50MB  0.65%  crypto/tls.(*Conn).Write
+         0     0% 92.74%     3.50MB  0.65%  crypto/tls.(*Conn).writeRecordLocked
+         0     0% 92.74%   250.38MB 46.62%  io.Copy (inline)
+         0     0% 92.74%     9.57MB  1.78%  io.discard.ReadFrom
+         0     0% 92.74%        3MB  0.56%  log/slog.(*Logger).Info
+         0     0% 92.74%        3MB  0.56%  log/slog.(*Logger).log
+         0     0% 92.74%        3MB  0.56%  log/slog.(*TextHandler).Handle
+         0     0% 92.74%        3MB  0.56%  log/slog.(*commonHandler).handle
+         0     0% 92.74%   124.80MB 23.24%  net.(*TCPConn).ReadFrom
+         0     0% 92.74%   116.01MB 21.60%  net.(*TCPConn).WriteTo
+         0     0% 92.74%   124.80MB 23.24%  net.(*TCPConn).readFrom
+         0     0% 92.74%   116.01MB 21.60%  net.(*TCPConn).writeTo
+         0     0% 92.74%   124.80MB 23.24%  net.genericReadFrom
+         0     0% 92.74%   116.01MB 21.60%  net.genericWriteTo
+         0     0% 92.74%       11MB  2.05%  net/http.(*Client).Do (inline)
+         0     0% 92.74%       11MB  2.05%  net/http.(*Client).do
+         0     0% 92.74%     9.50MB  1.77%  net/http.(*Client).send
+         0     0% 92.74%       14MB  2.61%  net/http.(*Transport).RoundTrip
+         0     0% 92.74%    31.60MB  5.88%  net/http.(*Transport).dialConnFor
+         0     0% 92.74%    31.60MB  5.88%  net/http.(*Transport).startDialConnForLocked.func1
+         0     0% 92.74%     7.50MB  1.40%  net/http.(*persistConn).readResponse
+         0     0% 92.74%     4.50MB  0.84%  net/http.(*persistConn).writeLoop
+         0     0% 92.74%        5MB  0.93%  net/http.(*response).WriteHeader
+         0     0% 92.74%   163.50MB 30.44%  net/http.HandlerFunc.ServeHTTP
+         0     0% 92.74%        3MB  0.56%  net/http.Header.Set (inline)
+         0     0% 92.74%     3.50MB  0.65%  net/http.NewRequest (inline)
+         0     0% 92.74%     7.50MB  1.40%  net/http.ReadResponse
+         0     0% 92.74%     6.02MB  1.12%  net/http.newBufioReader
+         0     0% 92.74%     8.52MB  1.59%  net/http.newBufioWriterSize
+         0     0% 92.74%   163.50MB 30.44%  net/http.serverHandler.ServeHTTP
+         0     0% 92.74%   130.49MB 24.30%  net/http/httputil.(*ReverseProxy).copyResponse
+         0     0% 92.74%       12MB  2.23%  net/textproto.(*Reader).ReadMIMEHeader (inline)
+         0     0% 92.74%       12MB  2.23%  perimeter/internal/mux.(*Session).readLoop
+         0     0% 92.74%     8.50MB  1.58%  perimeter/internal/mux.(*Session).receive
+         0     0% 92.74%     4.50MB  0.84%  perimeter/internal/mux.(*Session).writeLoop
+         0     0% 92.74%    25.07MB  4.67%  perimeter/internal/proxy.BenchmarkHTTPTunnel
+         0     0% 92.74%    25.07MB  4.67%  perimeter/internal/proxy.benchmarkHTTP
+         0     0% 92.74%    25.07MB  4.67%  perimeter/internal/proxy.benchmarkHTTP.func1
+         0     0% 92.74%   124.80MB 23.24%  perimeter/internal/tunnel.(*Connector).relay.func3
+         0     0% 92.74%   120.01MB 22.35%  perimeter/internal/tunnel.(*Connector).serve.func3
+         0     0% 92.74%    18.59MB  3.46%  sync.(*Pool).Get
+         0     0% 92.74%     3.50MB  0.65%  sync.(*Pool).Put
+         0     0% 92.74%     9.02MB  1.68%  sync.(*Pool).pin
+         0     0% 92.74%    25.07MB  4.67%  testing.(*B).launch
+         0     0% 92.74%    25.07MB  4.67%  testing.(*B).runN
